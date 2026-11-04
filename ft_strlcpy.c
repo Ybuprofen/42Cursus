@@ -10,39 +10,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include <stdio.h>
-#include <string.h>
-size_t ft_strlen(const char *str)
-{
-    int i;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return i;
+size_t	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }
 
-size_t ft_strlcpy (char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-    int i = 0;
-    while (src[i] && i < size - 1)
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    if (size > 0)
-        dest[i] = '\0';
-    return (ft_strlen(src));
+	unsigned int	i;
+
+	i = 0;
+	if (size == 0)
+		return (ft_strlen((char*)src));
+	while (src[i] && (i < size - 1))
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (ft_strlen((char*)src));
 }
 
-int main()
-{
-    char dest[] = "je teste un truc";
-    const char src[] = "jfzeiofjzoef";
-    size_t size = 9;
+// #include <unistd.h>
+//#include <bsd/string.h>
+// int main()
+// {
+//     char dest[] = "";
+//     const char src[] = "lorem ipsum dolor sit amet";
+//     size_t size = 0;
 
-    printf("%ld\n", ft_strlcpy(dest, src, size));
-    printf("%ld\n", strlcpy(dest, src, size));
-    return 0;
-}
+//     printf("%zu\n", ft_strlcpy(dest, src, size));
+//     printf("%ld\n", strlcpy(dest, src, size));
+//     return 0;
+// }
