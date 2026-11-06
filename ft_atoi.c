@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -36,8 +38,6 @@ int	ft_atoi(const char *str)
 	return (res);
 }
 /*
-#include <stdio.h>
-#include <stdlib.h>
 int main()
 {
     char str[] = "    -123456789";

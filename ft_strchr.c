@@ -10,22 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-int	ft_strlen(const char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+size_t ft_strlen(const char *str);
 
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
-	int len;
+	int	len;
 
 	len = ft_strlen(s);
 	i = 0;
@@ -38,4 +30,21 @@ char	*ft_strchr(const char *s, int c)
 		i++;
 	}
 	return (NULL);
+}
+
+int main()
+{
+    const char s[] = "NULL";
+    int c = '\0';
+    char *resultat_ft = ft_strchr(s, c);
+    char *resultat_std = strchr(s, c);
+    if (resultat_ft == NULL)
+        printf("ft_strchr : NULL (Non trouvé)\n");
+    else
+        printf("ft_strchr : %s\n", resultat_ft);
+    if (resultat_std == NULL)
+        printf("strchr : NULL (Non trouvé)\n");
+    else
+        printf("strchr : %s\n", resultat_std);
+    return 0;
 }

@@ -9,7 +9,7 @@
 /*   Updated: 2026/11/03 12:22:18 by tbrissot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -25,8 +25,6 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-// #include <stdio.h>
-// #include <string.h>
 // int main()
 // {
 //     const char s1[] = "test\200";

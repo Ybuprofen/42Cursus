@@ -10,53 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
+	size_t	i;
+	size_t	sublen;
 
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char *ft_strnstr(const char *big, const char *little, size_t len)
-{
-	size_t i;
-	size_t sublen;
-
-	i = 0;
-	sublen = ft_strlen((char*)little);
+	sublen = ft_strlen((char *)little);
 	if (little[0] == '\0')
-		return ((char*)big);
+		return ((char *)big);
 	while (big[i] && (i < (len - 1)))
 	{
 		if (big[i] == '\0')
-			return NULL;
+			return (NULL);
 		while (little[i + sublen])
 		{
 			if (little[i] == big[i])
 				i++;
 			else
-				return NULL;
+				return (NULL);
 		}
 		i++;
 	}
-	return 0;
+	return (0);
 }
 
-#include <stdio.h>
-#include <bsd/string.h>
+// #include <stdio.h>
+// #include <bsd/string.h>
 
-int main()
-{
-	const char big[] = "bonjour je suis moi";
-	const char little[] = "je";
-	size_t len = 11;
+// int main()
+// {
+// 	const char big[] = "bonjour je suis moi";
+// 	const char little[] = "je";
+// 	size_t len = 11;
 
-	printf("Ma Fonction : %s\n", ft_strnstr(big, little, len));
-	printf("Lib : %s\n", strnstr(big, little, len));
-	return 0;
-}
+// 	printf("Ma Fonction : %s\n", ft_strnstr(big, little, len));
+// 	printf("Lib : %s\n", strnstr(big, little, len));
+// 	return 0;
+// }

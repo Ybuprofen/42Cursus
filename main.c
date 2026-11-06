@@ -6,7 +6,7 @@
 /*   By: tbrissot <tbrissot@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 16:42:51 by tbrissot          #+#    #+#             */
-/*   Updated: 2026/11/04 19:50:10 by tbrissot         ###   ########.fr       */
+/*   Updated: 2026/11/06 19:10:34 by tbrissot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,18 @@
 // }
 
 // ft_memset
-//
+// #include <string.h>
+// #include <stdio.h>
+// int	main()
+// {
+// 	int		c = 48;
+// 	size_t	n = 5;
+// 	char	buffer2[] = "test";
+
+// 	printf("%s\n", (char *)ft_memset(buffer2, c, n));
+// 	return (0);
+// }
+
 // ft_bzero
 //
 // ft_memcpy
