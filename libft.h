@@ -6,7 +6,7 @@
 /*   By: tbrissot <tbrissot@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 11:43:20 by tbrissot          #+#    #+#             */
-/*   Updated: 2026/11/06 19:04:42 by tbrissot         ###   ########.fr       */
+/*   Updated: 2026/11/07 18:10:45 by tbrissot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ int ft_toupper(int c);
 size_t ft_strlcat(char *dst, const char *src, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+void    ft_bzero(void  *s, size_t n);
 #endif

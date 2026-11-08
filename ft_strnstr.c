@@ -15,26 +15,28 @@
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t	sublen;
+	size_t	j;
 
 	i = 0;
-	sublen = ft_strlen((char *)little);
-	if (little[0] == '\0')
+	if (little[i] == '\0')
 		return ((char *)big);
-	while (big[i] && (i < (len - 1)))
+	while ((i < (len)) && big[i])
 	{
-		if (big[i] == '\0')
-			return (NULL);
-		while (little[i + sublen])
+		j = 0;
+		while (((i + j) < len) && (little[j] == big[i + j]))
 		{
-			if (little[i] == big[i])
-				i++;
-			else
-				return (NULL);
+			if (little[j] == big[i + j])
+			{
+				j++;
+			}
+			if (little[j] == '\0')
+			{
+				return ((char *)(big + i));
+			}
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
 
 // #include <stdio.h>
@@ -42,9 +44,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 // int main()
 // {
-// 	const char big[] = "bonjour je suis moi";
-// 	const char little[] = "je";
-// 	size_t len = 11;
+// 	const char big[] = "ABCDABCDE";
+// 	const char little[] = "CDE";
+// 	size_t len = 10;
 
 // 	printf("Ma Fonction : %s\n", ft_strnstr(big, little, len));
 // 	printf("Lib : %s\n", strnstr(big, little, len));
