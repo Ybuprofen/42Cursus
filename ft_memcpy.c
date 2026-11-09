@@ -6,7 +6,7 @@
 /*   By: tbrissot <tbrissot@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/08 19:14:25 by tbrissot          #+#    #+#             */
-/*   Updated: 2026/11/08 21:28:18 by tbrissot         ###   ########.fr       */
+/*   Updated: 2026/11/09 21:20:15 by tbrissot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	temp1 = (char *)dest;
 	temp2 = (char *)src;
+	if (!dest && !src)
+		return (NULL);
 	while (i < n)
 	{
 		*temp1 = *temp2;
