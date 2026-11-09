@@ -29,7 +29,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 }
 
 // #include <unistd.h>
-//#include <bsd/string.h>
+// #include <bsd/string.h>
 // int main()
 // {
 //     char dest[] = "";

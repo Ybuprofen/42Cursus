@@ -6,7 +6,7 @@
 /*   By: tbrissot <tbrissot@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 11:43:20 by tbrissot          #+#    #+#             */
-/*   Updated: 2026/11/07 18:10:45 by tbrissot         ###   ########.fr       */
+/*   Updated: 2026/11/09 20:07:49 by tbrissot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,10 @@ size_t ft_strlcat(char *dst, const char *src, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void    ft_bzero(void  *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
+int	ft_memcmp(const void *s1, const void *s2, size_t n);
+void *ft_memchr(const void *s, int c, size_t n);
+char	*ft_strdup(const char *s);
+void *ft_calloc(size_t nmemb, size_t size);
 #endif
