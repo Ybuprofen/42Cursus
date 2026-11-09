@@ -6,7 +6,7 @@
 /*   By: tbrissot <tbrissot@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 16:42:51 by tbrissot          #+#    #+#             */
-/*   Updated: 2026/11/06 19:10:34 by tbrissot         ###   ########.fr       */
+/*   Updated: 2026/11/09 21:09:58 by tbrissot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,55 @@
 #include <unistd.h>
 
 // ft_isalpha
+// int main()
+// {
+// 	int	c;
 //
+// 	c = '\0';
+// 	printf("%d", ft_isalpha(c));
+// 	return (0);
+// }
+
 // ft_isdigit
+// int main()
+// {
+// 	int	c;
 //
+// 	c = '1';
+// 	printf("%d", ft_isdigit(c));
+// 	return (0);
+// }
+
 // ft_isalnum
+// int main()
+// {
+// 	int	c;
 //
+// 	c = 'U';
+// 	printf("%d", ft_isalnum(c));
+// 	return (0);
+// }
+
 // ft_isascii
+// int main()
+// {
+// 	int	c;
 //
+// 	c = '\0';
+// 	printf("%d", ft_isascii(c));
+// 	return (0);
+// }
+
 // ft_isprint
+// int main()
+// {
+// 	int	c;
 //
+// 	c = 'z';
+// 	printf("%d", ft_isascii(c));
+// 	return (0);
+// }
+
 // ft_strlen
 // int main()
 // {
