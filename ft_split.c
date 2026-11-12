@@ -6,7 +6,7 @@
 /*   By: tbrissot <tbrissot@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 17:24:46 by tbrissot          #+#    #+#             */
-/*   Updated: 2026/11/13 00:13:50 by tbrissot         ###   ########.fr       */
+/*   Updated: 2026/11/13 00:33:50 by tbrissot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,20 +89,20 @@ char	**ft_split(char const *s, char c)
 	}
 	return (dest);
 }
-int main()
-{
-	char **s;
-	int i = 0;
-	int j = 0;
-	s = ft_split("test |||de||t|ruc|||q|", '|');
-	while (s[i])
-	{
-		printf("%s\n", s[i]);
-		i++;
-		j++;
-	}
-	return (0);
-}
+// int main()
+// {
+// 	char **s;
+// 	int i = 0;
+// 	int j = 0;
+// 	s = ft_split("test |||de||t|ruc|||q|", '|');
+// 	while (s[i])
+// 	{
+// 		printf("%s\n", s[i]);
+// 		i++;
+// 		j++;
+// 	}
+// 	return (0);
+// }
 // int main()
 // {
 // 	char s[] = "hello!";
