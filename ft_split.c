@@ -1,0 +1,110 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tbrissot <tbrissot@student.42mulhouse.f    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/12 17:24:46 by tbrissot          #+#    #+#             */
+/*   Updated: 2026/11/12 23:19:38 by tbrissot         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	wordcount(char const *str, char c)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (str[i - 1] == c && str[i] != c)
+			count++;
+		i++;
+	}
+	return (count);
+}
+
+void	ft_free(char **s, int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+}
+
+char	*wordmem(char const *s, int start, int end)
+{
+	int		i;
+	char	*word;
+
+	i = 0;
+	word = ft_calloc(((end - start) + 1), sizeof(char));
+	if (!word)
+		return (NULL);
+	while (start < end)
+	{
+		word[i] = s[start];
+		i++;
+		start++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**dest;
+	size_t	i;
+	int		j;
+	int		start;
+
+	i = 0;
+	j = 0;
+	start = -1;
+	dest = ft_calloc((wordcount(s, c) + 1), sizeof(char *));
+	if (!dest)
+		return (NULL);
+	while (s[i] && j <= wordcount(s, c) - 1)
+	{
+		while (s[i] == c && s[i])
+			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		dest[j] = wordmem(s, start, i);
+		if (!dest[j])
+			ft_free(dest, j);
+		j++;
+	}
+	return (dest);
+}
+// int main()
+// {
+// 	char **s;
+// 	int i = 0;
+// 	int j = 0;
+// 	s = ft_split("lorem ipsum dolor sit amet. Sed risus. Suspendisse  ", ' ');
+// 	while (s[i])
+// 	{
+// 		printf("%s\n", s[i]);
+// 		i++;
+// 		j++;
+// 	}
+// 	return (0);
+// }
+// int main()
+// {
+// 	char s[] = "zzzzzzzzz";
+// 	char c = 'z';
+// 	printf("%d", wordcount(s, c));
+// 	return 0;
+// }
