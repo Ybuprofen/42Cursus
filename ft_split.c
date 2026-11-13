@@ -6,7 +6,7 @@
 /*   By: tbrissot <tbrissot@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 17:24:46 by tbrissot          #+#    #+#             */
-/*   Updated: 2026/11/13 01:01:18 by tbrissot         ###   ########.fr       */
+/*   Updated: 2026/11/13 17:45:21 by tbrissot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,20 @@ int	wordcount(char const *str, char c)
 {
 	int	i;
 	int	count;
+	int	in_word;
 
 	i = 0;
 	count = 0;
+	in_word = 0;
 	while (str[i])
 	{
-		if (str[i - 1] == c && str[i] != c)
+		if (str[i] != c && in_word == 0)
+		{
+			in_word = 1;
 			count++;
+		}
+		else if (str[i] == c)
+			in_word = 0;
 		i++;
 	}
 	return (count);
@@ -56,13 +63,11 @@ char	*wordmem(char const *s, int start, int end)
 		i++;
 		start++;
 	}
-	// word[i] = '\0';
 	return (word);
 }
 
-char	**ft_split(char const *s, char c)
+char	**fill_words(char **dest, char const *s, char c)
 {
-	char	**dest;
 	size_t	i;
 	int		j;
 	int		start;
@@ -70,9 +75,6 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	start = -1;
-	dest = ft_calloc((wordcount(s, c) + 1), sizeof(char *));
-	if (!dest)
-		return (NULL);
 	while (i <= ft_strlen(s))
 	{
 		if (s[i] != c && start < 0)
@@ -88,6 +90,18 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	return (dest);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**dest;
+
+	if (!s)
+		return (NULL);
+	dest = ft_calloc((wordcount(s, c) + 1), sizeof(char *));
+	if (!dest)
+		return (NULL);
+	return (fill_words(dest, s, c));
 }
 // int main()
 // {
