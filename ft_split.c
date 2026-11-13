@@ -6,7 +6,7 @@
 /*   By: tbrissot <tbrissot@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 17:24:46 by tbrissot          #+#    #+#             */
-/*   Updated: 2026/11/13 00:33:50 by tbrissot         ###   ########.fr       */
+/*   Updated: 2026/11/13 01:01:18 by tbrissot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*wordmem(char const *s, int start, int end)
 	char	*word;
 
 	i = 0;
-	word = ft_calloc(((end - start) + 1), sizeof(char));
+	word = ft_calloc(((end - start +1)), sizeof(char));
 	if (!word)
 		return (NULL);
 	while (start < end)
@@ -56,7 +56,7 @@ char	*wordmem(char const *s, int start, int end)
 		i++;
 		start++;
 	}
-	word[i] = '\0';
+	// word[i] = '\0';
 	return (word);
 }
 
@@ -94,7 +94,7 @@ char	**ft_split(char const *s, char c)
 // 	char **s;
 // 	int i = 0;
 // 	int j = 0;
-// 	s = ft_split("test |||de||t|ruc|||q|", '|');
+// 	s = ft_split("hello!zzzzzzzz", 'z');
 // 	while (s[i])
 // 	{
 // 		printf("%s\n", s[i]);
@@ -103,10 +103,10 @@ char	**ft_split(char const *s, char c)
 // 	}
 // 	return (0);
 // }
-// int main()
-// {
-// 	char s[] = "hello!";
-// 	char c = ' ';
-// 	printf("%d", wordcount(s, c));
-// 	return 0;
-// }
+// // int main()
+// // {
+// // 	char s[] = "hello!";
+// // 	char c = ' ';
+// // 	printf("%d", wordcount(s, c));
+// // 	return 0;
+// // }
