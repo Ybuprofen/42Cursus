@@ -83,7 +83,7 @@ char	**fill_words(char **dest, char const *s, char c)
 		{
 			dest[j] = wordmem(s, start, i);
 			if (!dest[j])
-				ft_free(dest, j);
+				return (ft_free(dest, j));
 			j++;
 			start = -1;
 		}
