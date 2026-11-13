@@ -6,13 +6,13 @@
 /*   By: tbrissot <tbrissot@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 17:24:46 by tbrissot          #+#    #+#             */
-/*   Updated: 2026/11/13 17:45:21 by tbrissot         ###   ########.fr       */
+/*   Updated: 2026/11/13 17:55:58 by tbrissot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	wordcount(char const *str, char c)
+int	word_count(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -48,7 +48,7 @@ void	ft_free(char **s, int n)
 	free(s);
 }
 
-char	*wordmem(char const *s, int start, int end)
+char	*word_mem(char const *s, int start, int end)
 {
 	int		i;
 	char	*word;
@@ -66,7 +66,7 @@ char	*wordmem(char const *s, int start, int end)
 	return (word);
 }
 
-char	**fill_words(char **dest, char const *s, char c)
+char	**make_words(char **dest, char const *s, char c)
 {
 	size_t	i;
 	int		j;
@@ -81,9 +81,9 @@ char	**fill_words(char **dest, char const *s, char c)
 			start = i;
 		else if ((s[i] == c || i == ft_strlen(s)) && start >= 0)
 		{
-			dest[j] = wordmem(s, start, i);
+			dest[j] = word_mem(s, start, i);
 			if (!dest[j])
-				return (ft_free(dest, j));
+				ft_free(dest, j);
 			j++;
 			start = -1;
 		}
@@ -98,10 +98,10 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	dest = ft_calloc((wordcount(s, c) + 1), sizeof(char *));
+	dest = ft_calloc((word_count(s, c) + 1), sizeof(char *));
 	if (!dest)
 		return (NULL);
-	return (fill_words(dest, s, c));
+	return (make_words(dest, s, c));
 }
 // int main()
 // {
